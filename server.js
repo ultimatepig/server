@@ -57,7 +57,7 @@ io.on('connection', function(socket) {
   });
 });
 
-http.listen(8080, '146.148.94.253', function() {
+http.listen(8080, '0.0.0.0', function() {
   console.log("listening on *:8080");
   var tag = new TagGame(8, 'map1', 0);
   games.push(tag);

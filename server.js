@@ -34,6 +34,7 @@ io.on('connection', function(socket) {
       var indexPlayer = indexOfID(activeGames[index].players, data.id);
       activeGames[index].players[indexPlayer].x = data.x;
       activeGames[index].players[indexPlayer].y = data.y;
+      activeGames[index].players[indexPlayer].stealthed = data.stealthed;
     }
   });
   socket.on('tagCollision', function(data) {
@@ -103,7 +104,7 @@ function updateLobby() {
       activeGames.push(games[i]);
       games.splice(i, 1);
     }
-    else if (games[i].players.length >= games[i].maxPlayers / 2) {
+    else if (games[i].players.length >= 3) {
       games[i].timeLeft--;
     } else {
       games[i].timeLeft = 15;

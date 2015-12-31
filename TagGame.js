@@ -29,6 +29,7 @@ TagGame.prototype.update = function() {
 }
 
 TagGame.prototype.start = function(io) {
+  console.log(this.players);
   this.started = true;
   for (var i = 0; i < this.players.length; i++) {
     this.players[i].color = 0xffffff;

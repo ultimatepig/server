@@ -68,7 +68,7 @@ http.listen(8080, '0.0.0.0', function() {
   games.push(tag2);
   var tag3 = new TagGame(8, 'map1', 3);
   games.push(tag3);
-  var active = setInterval(updateActive, 100);
+  var active = setInterval(updateActive, 50);
   var lobby = setInterval(updateLobby, 1000);
 });
 

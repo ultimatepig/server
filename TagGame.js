@@ -18,7 +18,7 @@ TagGame.prototype.update = function() {
     this.gameOver = true;
   }
   if (this.gameTime > 0)
-    this.gameTime -= 0.1;
+    this.gameTime -= 0.05;
   if(this.gameTime <= 0 && !this.beginGame) {
     this.gameTime = 90;
     this.beginGame = true;

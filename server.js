@@ -6,9 +6,12 @@ var TagGame = require("./TagGame.js").TagGame;
 var players = [];
 var games = [];
 var activeGames = [];
+var number = 0;
 
 io.on('connection', function(socket) {
   console.log(socket.id);
+  number++;
+  console.log(number);
   players.push(socket.id);
   socket.emit('updateLobby', {games: games});
   socket.emit('newID', {id: socket.id});
@@ -104,7 +107,7 @@ function updateLobby() {
       activeGames.push(games[i]);
       games.splice(i, 1);
     }
-    else if (games[i].players.length >= 3) {
+    else if (games[i].players.length >= 4) {
       games[i].timeLeft--;
     } else {
       games[i].timeLeft = 15;
